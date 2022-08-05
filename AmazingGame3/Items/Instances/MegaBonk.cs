@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pastel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,7 +24,7 @@ namespace AmazingGame3.Items.Instances
 
         public void OnUse(GameState state)
         {
-
+            Console.WriteLine("Je gaat op je knietjes zitten, pakt de MegaBonk in de hand en begint fervent te knikkeren. Je bent helemaal in je nopjes.".Pastel(Engine.COLOR_INTERMEDIATE_TEXT));
         }
     }
 }

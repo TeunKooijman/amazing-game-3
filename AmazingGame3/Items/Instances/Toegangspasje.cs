@@ -1,4 +1,5 @@
 ﻿using AmazingGame3.Rooms;
+using Pastel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +25,7 @@ namespace AmazingGame3.Items.Instances
 
         public void OnUse(GameState state)
         {
-
+            Console.WriteLine("Hoe wil je een pasje 'gebruiken'? Stap gewoon door de fucking poortjes.".Pastel(Engine.COLOR_INTERMEDIATE_TEXT));
         }
     }
 }

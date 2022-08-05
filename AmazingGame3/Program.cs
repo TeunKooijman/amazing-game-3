@@ -166,18 +166,28 @@ namespace AmazingGame3
                         IItem? foundItem = State.Inventory.Items.FirstOrDefault(e => e.GetName().Equals(target, StringComparison.InvariantCultureIgnoreCase));
                         if(foundItem == null)
                         {
-                            Console.WriteLine($"Kweenie man. Er is hier geen '{target}'.".Pastel(COLOR_ERROR));
+                            IRoom? foundExit = State.CurrentRoom.GetExits().FirstOrDefault(e => e.GetName().Equals(target, StringComparison.InvariantCultureIgnoreCase));
+                            if (foundExit == null)
+                            {
+                                Console.WriteLine($"Kweenie man. Er is hier geen '{target}'.".Pastel(COLOR_ERROR));
+                            }
+                            else
+                            {
+                                Console.WriteLine("Je kijkt naar " + target + " en je ziet:");
+                                Console.WriteLine(foundExit.GetName().Pastel(COLOR_INTERMEDIATE_TEXT));
+                                Console.WriteLine("Ik weet niet wat je hiervan had verwacht.".Pastel(COLOR_INTERMEDIATE_TEXT));
+                            }
                         }
                         else
                         {
-                            Console.WriteLine("Je kijkt naar " + target + " en je ziet:".Pastel(COLOR_ERROR));
-                            Console.WriteLine(foundItem.GetDescription());
+                            Console.WriteLine("Je kijkt naar " + target + " en je ziet:");
+                            Console.WriteLine(foundItem.GetDescription().Pastel(COLOR_INTERMEDIATE_TEXT));
                         }
                     }
                     else
                     {
-                        Console.WriteLine("Je kijkt naar " + target + " en je ziet:".Pastel(COLOR_ERROR));
-                        Console.WriteLine(foundPerson.GetDescription());
+                        Console.WriteLine("Je kijkt naar " + target + " en je ziet:");
+                        Console.WriteLine(foundPerson.GetDescription().Pastel(COLOR_INTERMEDIATE_TEXT));
                     }
                 }
             }
@@ -194,7 +204,15 @@ namespace AmazingGame3
                     IItem? foundItem = State.Inventory.Items.FirstOrDefault(e => e.GetName().Equals(target, StringComparison.InvariantCultureIgnoreCase));
                     if (foundItem == null)
                     {
-                        Console.WriteLine($"Je hebt helemaal geen '{target}' in je inventory, dom joch.".Pastel(COLOR_ERROR));
+                        IPerson? person = State.CurrentRoom.GetPersons().FirstOrDefault(e => e.GetName().Equals(target, StringComparison.InvariantCultureIgnoreCase));
+                        if(person == null)
+                        {
+                            Console.WriteLine($"Je hebt helemaal geen '{target}' in je inventory, dom joch.".Pastel(COLOR_ERROR));
+                        }
+                        else
+                        {
+                            Console.WriteLine("Geen mensen misbruiken alsjeblieft. Dit spel is PG8.".Pastel(COLOR_INTERMEDIATE_TEXT));
+                        }
                     }
                     else
                     {
