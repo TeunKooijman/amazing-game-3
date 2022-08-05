@@ -1,0 +1,17 @@
+C:\Personal\Workspaces\amazing-game_3(final)3(2)\AmazingGame3\AmazingGame3\obj\Debug\net6.0\AmazingGame3.csproj.AssemblyReference.cache
+C:\Personal\Workspaces\amazing-game_3(final)3(2)\AmazingGame3\AmazingGame3\obj\Debug\net6.0\AmazingGame3.GeneratedMSBuildEditorConfig.editorconfig
+C:\Personal\Workspaces\amazing-game_3(final)3(2)\AmazingGame3\AmazingGame3\obj\Debug\net6.0\AmazingGame3.AssemblyInfoInputs.cache
+C:\Personal\Workspaces\amazing-game_3(final)3(2)\AmazingGame3\AmazingGame3\obj\Debug\net6.0\AmazingGame3.AssemblyInfo.cs
+C:\Personal\Workspaces\amazing-game_3(final)3(2)\AmazingGame3\AmazingGame3\obj\Debug\net6.0\AmazingGame3.csproj.CoreCompileInputs.cache
+C:\Personal\Workspaces\amazing-game_3(final)3(2)\AmazingGame3\AmazingGame3\bin\Debug\net6.0\AmazingGame3.exe
+C:\Personal\Workspaces\amazing-game_3(final)3(2)\AmazingGame3\AmazingGame3\bin\Debug\net6.0\AmazingGame3.deps.json
+C:\Personal\Workspaces\amazing-game_3(final)3(2)\AmazingGame3\AmazingGame3\bin\Debug\net6.0\AmazingGame3.runtimeconfig.json
+C:\Personal\Workspaces\amazing-game_3(final)3(2)\AmazingGame3\AmazingGame3\bin\Debug\net6.0\AmazingGame3.dll
+C:\Personal\Workspaces\amazing-game_3(final)3(2)\AmazingGame3\AmazingGame3\bin\Debug\net6.0\AmazingGame3.pdb
+C:\Personal\Workspaces\amazing-game_3(final)3(2)\AmazingGame3\AmazingGame3\obj\Debug\net6.0\AmazingGame3.dll
+C:\Personal\Workspaces\amazing-game_3(final)3(2)\AmazingGame3\AmazingGame3\obj\Debug\net6.0\refint\AmazingGame3.dll
+C:\Personal\Workspaces\amazing-game_3(final)3(2)\AmazingGame3\AmazingGame3\obj\Debug\net6.0\AmazingGame3.pdb
+C:\Personal\Workspaces\amazing-game_3(final)3(2)\AmazingGame3\AmazingGame3\obj\Debug\net6.0\AmazingGame3.genruntimeconfig.cache
+C:\Personal\Workspaces\amazing-game_3(final)3(2)\AmazingGame3\AmazingGame3\obj\Debug\net6.0\ref\AmazingGame3.dll
+C:\Personal\Workspaces\amazing-game_3(final)3(2)\AmazingGame3\AmazingGame3\bin\Debug\net6.0\Pastel.dll
+C:\Personal\Workspaces\amazing-game_3(final)3(2)\AmazingGame3\AmazingGame3\obj\Debug\net6.0\AmazingGame3.csproj.CopyComplete
