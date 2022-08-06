@@ -1,7 +1,7 @@
 FROM mcr.microsoft.com/dotnet/sdk:6.0-focal AS build
 
 WORKDIR /build
-COPY Sources Sources/
+COPY . ./
 
 ARG artifactoryUsername
 ARG artifactoryPassword
