@@ -10,7 +10,7 @@ RUN dotnet nuget add source https://farmer.jfrog.io/artifactory/api/nuget/core-n
 
 RUN dotnet restore ./AmazingGame3.sln 
 RUN dotnet test ./AmazingGame3.sln 
-RUN dotnet publish ./AmazingGame3.Host.csproj -c Release -o /build/publish
+RUN dotnet publish ./AmazingGame3.Host/AmazingGame3.Host.csproj -c Release -o /build/publish
 
 FROM mcr.microsoft.com/dotnet/aspnet:6.0-alpine AS release
 
