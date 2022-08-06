@@ -202,13 +202,19 @@ ________________________________________________________________________________
                 else
                 {
                     string target = split[1].Trim();
-                    if (target.Equals("GoudenMuntje"))
+                    IItem? item = typeof(IItem).Assembly
+                        .GetTypes()
+                        .Where(e => e.IsAssignableTo(typeof(IItem)) && e != typeof(IItem))
+                        .Select(e => (IItem)Activator.CreateInstance(e)!)
+                        .FirstOrDefault(e => e.GetName().Equals(target, StringComparison.InvariantCultureIgnoreCase));
+                    
+                    if (item == null)
                     {
-                        await State.Inventory.AddAsync(new GoudenMuntje(), Console);
+                        await Console.WriteLineAsync($"Item '{target}' ken ik niet.".Pastel(COLOR_ERROR));
                     }
                     else
                     {
-                        await Console.WriteLineAsync($"Item '{target}' ken ik niet.".Pastel(COLOR_ERROR));
+                        await State.Inventory.AddAsync(item, Console);
                     }
                 }
             }
