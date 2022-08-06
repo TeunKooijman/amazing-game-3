@@ -21,7 +21,7 @@ namespace AmazingGame3.Items.Instances
 
         public string GetDescription()
         {
-            return "Het toeganspasje van Stater!";
+            return "Het toegangspasje van Stater!";
         }
 
         public async Task OnUseAsync(GameState state, IRemoteConsole console)
