@@ -5,9 +5,16 @@ VisualStudioVersion = 17.2.32505.173
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AmazingGame3", "AmazingGame3\AmazingGame3.csproj", "{40B78B0C-8FE5-4AC8-8B26-F370D75BF74D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmazingGame3.Host", "AmazingGame3.Host\AmazingGame3.Host.csproj", "{F8C8BFB2-121C-48AE-97DA-21632780FFCE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AmazingGame3.Host", "AmazingGame3.Host\AmazingGame3.Host.csproj", "{F8C8BFB2-121C-48AE-97DA-21632780FFCE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmazingGame3.Cli", "AmazingGame3.Cli\AmazingGame3.Cli.csproj", "{4A40695C-C610-49A0-913F-F68ED590B05D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AmazingGame3.Cli", "AmazingGame3.Cli\AmazingGame3.Cli.csproj", "{4A40695C-C610-49A0-913F-F68ED590B05D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Properties", "Properties", "{CDAB04AD-75E2-479B-9317-A79DC5514F7C}"
+	ProjectSection(SolutionItems) = preProject
+		Directory.Build.props = Directory.Build.props
+		dockerfile = dockerfile
+		.github\workflows\main.yml = .github\workflows\main.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
