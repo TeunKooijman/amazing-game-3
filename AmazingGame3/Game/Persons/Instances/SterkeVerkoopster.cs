@@ -15,8 +15,34 @@ namespace AmazingGame3.Persons.Instances
     {
         public static int ID = 2;
 
+        public const string DESCRIPTION = @"⠀⠀⠀,_____________________
+⠀⠀⠀|
+⠀⠀⠀|⠀⠀⠀.-.--.-.
+⠀⠀⠀|⠀⠀(⠀/_)(_\⠀}
+⠀⠀⠀|⠀(⠀`}'.⠀./⠀`}
+⠀⠀⠀|⠀⠀(`}\_c/(`}
+⠀⠀⠀|⠀⠀⠀`_J⠀⠀L_`
+⠀⠀⠀|⠀,'⠀⠀⠀`'⠀-.\
+⠀⠀⠀|/⠀/Y⠀⠀o)⠀⠀o)\
+⠀⠀⠀/⠀/⠀\`-'⠀`-'}⠀)
+⠀⠀(⠀(⠀⠀⠀\⠀⠀⠀⠀//⠀/
+⠀⠀⠀\⠀\⠀⠀;⠀⠀.⠀Y⠀/
+⠀⠀⠀|\⠀\/⠀⠀⠀⠀⠀⠀Y
+⠀⠀⠀|⠀);⠀⠀⠀⠀\,/⠀\
+⠀⠀⠀|⠀⠀:⠀⠀⠀⠀⠀\⠀⠀|
+⠀⠀⠀|⠀⠀⠀`.⠀⠀⠀⠀\⠀|
+⠀⠀⠀|⠀⠀⠀⠀⠀`.⠀⠀⠀\|
+⠀⠀⠀|⠀⠀⠀⠀⠀⠀⠀`.⠀⠀\
+⠀⠀⠀|⠀⠀⠀⠀⠀⠀⠀⠀⠀)⠀⠀)
+⠀⠀⠀|______⠀⠀/⠀⠀/_______
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀(⠀⠀/
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀)⠀/(
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀/⠀/_`\_
+⠀⠀⠀⠀⠀⠀⠀⠀⠀(_⠀\_`""'
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀`""'";
+
         public SterkeVerkoopster()
-            : base(ID, name: "Sterke Verkoopster", description: "Een prima wijfie.")
+            : base(ID, name: "Sterke Verkoopster", description: DESCRIPTION)
         {
 
         }

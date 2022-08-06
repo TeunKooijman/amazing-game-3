@@ -51,6 +51,7 @@ namespace AmazingGame3.Host.Communication
         public async Task WriteLineAsync(string line)
         {
             line = ColorParser.Parse(line, (line, match, text, color) => line.Replace(match, "<span style=\"color: " + color + "\">" + text + "</span>"));
+            line = line.Replace(Environment.NewLine, "<br />");
             await GetHub().Clients.Client(ConnectionId).SendAsync("write", line);
         }
 

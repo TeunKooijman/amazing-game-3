@@ -25,6 +25,7 @@ connection.on("write", function (line) {
     document.getElementById("console").appendChild(lineElement);
 });
 
+
 connection.start().then(function () {
 
 })
@@ -94,4 +95,8 @@ messageInput.addEventListener("keydown", function (event) {
             currentHistoryIndex = currentHistoryIndex + 1;
         }
     }
+});
+
+document.getElementById("console").addEventListener("click", function () {
+    messageInput.focus();
 });

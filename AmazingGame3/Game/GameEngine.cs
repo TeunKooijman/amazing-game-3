@@ -30,6 +30,7 @@ namespace AmazingGame3
         private const string ACTION_PREFIX_TALK_TO = "Babbel met";
         private const string ACTION_PREFIX_INSPECT_INVENTORY = "Wat zit er eigenlijk allemaal in mijn zakje?";
         private const string CHEAT_GIVE_ITEM = "CHEAT GIVE ITEM";
+        private const string CHEAT_GO_TO_ROOM = "CHEAT GO TO ROOM";
 
         public static readonly Regex COLOR_REGEX = new Regex("{{#([0-9A-F]{6}|[0-9a-f]{6})}}([^{]*){{\\/#([0-9A-F]{6}|[0-9a-f]{6})\\/}}");
 
@@ -194,20 +195,41 @@ ________________________________________________________________________________
             else if (input!.StartsWith(CHEAT_GIVE_ITEM))
             {
                 string[] split = input.Split(CHEAT_GIVE_ITEM);
-                if(split.Length < 1)
+                if (split.Length < 1)
                 {
                     await Console.WriteLineAsync("Die cheat ken ik niet".Pastel(COLOR_ERROR));
                 }
                 else
                 {
                     string target = split[1].Trim();
-                    if(target.Equals("GoudenMuntje"))
+                    if (target.Equals("GoudenMuntje"))
                     {
                         await State.Inventory.AddAsync(new GoudenMuntje(), Console);
                     }
                     else
                     {
                         await Console.WriteLineAsync($"Item '{target}' ken ik niet.".Pastel(COLOR_ERROR));
+                    }
+                }
+            }
+            else if (input!.StartsWith(CHEAT_GO_TO_ROOM))
+            {
+                string[] split = input.Split(CHEAT_GO_TO_ROOM);
+                if (split.Length < 1)
+                {
+                    await Console.WriteLineAsync("Die cheat ken ik niet".Pastel(COLOR_ERROR));
+                }
+                else
+                {
+                    string target = split[1].Trim();
+                    IRoom? room = RoomProvider.GetRoom(target);
+                    if (room == null)
+                    {
+                        await Console.WriteLineAsync($"Room '{target}' ken ik niet.".Pastel(COLOR_ERROR));
+                    }
+                    else
+                    {
+                        State.CurrentRoom = room;
                     }
                 }
             }
@@ -249,6 +271,10 @@ ________________________________________________________________________________
                     {
                         await Console.WriteLineAsync("Je kijkt naar " + target + " en je ziet:");
                         await Console.WriteLineAsync(foundPerson.GetDescription().Pastel(COLOR_INTERMEDIATE_TEXT));
+                        //foreach(string line in .Split(Environment.NewLine))
+                        //{
+                        //    await Console.WriteLineAsync(line);
+                        //}
                     }
                 }
             }
@@ -428,7 +454,6 @@ _▀_________▀__▀_________▀__▀_________▀__▀▀▀▀▀▀▀▀▀�
 ______________________________________________________________________________________________________________________________________________________________________
 
 ";
-
             await Console.WriteLineAsync(amazingGame3);
             await Console.WriteLineAsync("Press enter to continue.");
             await Console.ReadLineAsync();
