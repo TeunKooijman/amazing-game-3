@@ -17,8 +17,20 @@ namespace AmazingGame3.Persons.Instances
         public static bool HasBeenAtToeganspoortjes = false;
         public static int ID = 9317;
 
+        public const string DESCRIPTION = @"....,⠀⠀⠀⠀⠀⠀⠀,....
+.'⠀,,,⠀'.⠀⠀⠀.'⠀,,,⠀'.
+⠀.`⠀⠀⠀`.⠀⠀⠀⠀⠀.`⠀⠀⠀`.
+:⠀.....⠀:⠀⠀⠀:⠀.....⠀:
+:`~'-'⠀-`:⠀⠀⠀:`-'-'~`:
+⠀`.~-`.'⠀⠀⠀⠀⠀`.~`'.'
+⠀⠀⠀```⠀⠀⠀___⠀⠀⠀```
+⠀⠀⠀⠀⠀⠀⠀(⠀.⠀.⠀).._..
+⠀⠀⠀⠀⠀⠀.'⠀⠀⠀⠀⠀'.
+⠀⠀⠀⠀⠀`.~~~~~~~.`
+⠀⠀⠀⠀⠀⠀⠀`-...-`";
+
         public Emile() 
-            : base(ID, name: "Emile", description: "Je viespeuk collega")
+            : base(ID, name: "Emile", description: DESCRIPTION)
         {
 
         }
