@@ -23,7 +23,8 @@ namespace AmazingGame3.Persons
                 new Emile(),
                 new WindowsVista(),
                 new LunaBoulder(),
-                new Deksletten()
+                new Deksletten(),
+                new KalendeMan()
             };
         }
 

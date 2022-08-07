@@ -2,6 +2,7 @@
 using AmazingGame3.Infrastructure;
 using AmazingGame3.Items.Instances;
 using AmazingGame3.Rooms;
+using AmazingGame3.Rooms.Instances.Stater;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -90,7 +91,15 @@ namespace AmazingGame3.Persons.Instances
                     .AddResponse("Ja ik weet eigenlijk ook niet zo goed waarom ik hier naartoe kwam. De ballen.", "De ballen 2.")
                     .Build();
             }
-            else
+            else if(StaterLobby.HasCompletedWork)
+            {
+                return builder
+                    .AddResponse("Nou, ik wou gewoon even gedag zeggen joh. Graag of niet he.", "Okee doei.", continuation => 
+                    {
+                        continuation.AddResponse("Doei2.");
+                    })
+                    .Build();
+            }
             {
                 return builder
                     .AddResponse("Ik ben echt zo knettertje dom Tjeerd, ik ben alweer mijn pasje vergeten! Kan ik een dagpas krijgen?", "Ja whatever.", continuation =>

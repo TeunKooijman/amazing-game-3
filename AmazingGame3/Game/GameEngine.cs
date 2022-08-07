@@ -5,6 +5,7 @@ using AmazingGame3.Items;
 using AmazingGame3.Items.Instances;
 using AmazingGame3.Persons;
 using AmazingGame3.Rooms;
+using System.Diagnostics;
 using System.Text.RegularExpressions;
 
 namespace AmazingGame3
@@ -15,6 +16,7 @@ namespace AmazingGame3
         private IRemoteConsole Console { get; }
         private IRoomProvider RoomProvider { get; }
         private IPersonProvider PersonProvider { get; }
+        private Stopwatch Stopwatch { get; }
 
         public GameEngine(GameState state, IRemoteConsole console, IRoomProvider roomProvider, IPersonProvider personProvider)
         {
@@ -22,6 +24,7 @@ namespace AmazingGame3
             Console = console;
             RoomProvider = roomProvider;
             PersonProvider = personProvider;
+            Stopwatch = new Stopwatch();
         }
 
         private const string ACTION_PREFIX_LOOK_AT = "Kijk naar";
@@ -43,6 +46,8 @@ namespace AmazingGame3
 
         public async Task RunAsync()
         {
+            Stopwatch.Start();
+
             await RenderAsciiArtAsync();
             await Console.WriteLineAsync("Welkom bij AmazingGame3. Like en subscribe en forward deze e-mail naar 15 mensen, anders heb je 20 jaar pech en krijg je een SOA.");
             await Console.WriteLineAsync("AmazingGame3 is een hypermodern, state-of-the-fart game. Gebruik je inteligentie om deze virtuele game wereld te beïnvloeden.");
@@ -64,9 +69,12 @@ namespace AmazingGame3
                 await ProcessInputAsync(await Console.ReadLineAsync());
             }
 
+            TimeSpan timeTaken = TimeSpan.FromMilliseconds(Stopwatch.ElapsedMilliseconds);
             await Console.WriteLineAsync("Gewonnen!");
-
-
+            await Console.WriteLineAsync("Je hebt er: " + timeTaken.ToString(@"dd\.hh\:mm\:ss") + " over gedaan! Knap hoor.");
+            await Console.WriteLineAsync("Press Piemelkont to continue.");
+            await Console.ReadLineAsync();
+            await Console.ClearAsync();
 
             string dickbut = @"______________________________________JasperTeu_________________________________________
 __________________________________nKelvinRobbertOli_____________________________________
@@ -123,7 +131,6 @@ ___________________________________elv__________________________________________
 
 
             await Console.WriteLineAsync(dickbut);
-            await Console.WriteLineAsync("Press Piemelkont to restart.");
             await Console.ReadLineAsync();
             await Console.ClearAsync();
         }
@@ -366,9 +373,22 @@ ___________________________________elv__________________________________________
         private async Task EnterDialogAsync(DialogSegment dialog)
         {
             DialogSegment? currentSegment = dialog;
-            while(currentSegment != null)
+            DialogResponse? lastSelectedResponse = null;
+            while (true)
             {
+                if(currentSegment == null)
+                {
+                    if (lastSelectedResponse != null)
+                    {
+                        await lastSelectedResponse.OnChosenAsync(State);
+                    }
+                    break;
+                }
                 await Console.WriteLineAsync($"\"{currentSegment.Text}\"".Pastel(COLOR_THEIR_TEXT));
+                if(lastSelectedResponse != null)
+                {
+                    await lastSelectedResponse.OnChosenAsync(State);
+                }
                 if(currentSegment.Responses.Count == 0)
                 {
                     break;
@@ -402,9 +422,8 @@ ___________________________________elv__________________________________________
                     }
                     else
                     {
-                        DialogResponse selectedResponse = currentSegment.Responses[responseIndex];
-                        await selectedResponse.OnChosenAsync(State);
-                        currentSegment = selectedResponse.NextSegment;
+                        lastSelectedResponse = currentSegment.Responses[responseIndex];
+                        currentSegment = lastSelectedResponse.NextSegment;
                         break;
                     }
 

@@ -18,8 +18,27 @@ namespace AmazingGame3.Persons.Instances
 
         public static int ID = 172324;
 
+        public const string DESCRIPTION = @"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀,----------------,⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀,---------,
+⠀⠀⠀⠀⠀⠀⠀⠀,-----------------------,⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀,""⠀⠀⠀⠀⠀⠀⠀⠀,""⠀|
+⠀⠀⠀⠀⠀⠀,""⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀,""⠀|⠀⠀⠀⠀⠀⠀⠀⠀,""⠀⠀⠀⠀⠀⠀⠀⠀,""⠀|
+⠀⠀⠀⠀⠀+-----------------------+⠀⠀|⠀⠀⠀⠀⠀⠀,""⠀⠀⠀⠀⠀⠀⠀⠀,""⠀|
+⠀⠀⠀⠀⠀|⠀⠀.----------------⠀-.⠀⠀|⠀⠀|⠀+---------+⠀⠀⠀⠀⠀⠀|
+⠀⠀⠀⠀⠀|⠀⠀|⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀|⠀⠀|⠀⠀|⠀⠀⠀⠀⠀|⠀-==⠀----'|⠀⠀⠀⠀⠀⠀|
+⠀⠀⠀⠀⠀|⠀⠀|⠀VISUAL⠀STUDIO⠀⠀|⠀⠀|⠀⠀|⠀⠀⠀⠀⠀|⠀⠀⠀⠀⠀⠀⠀⠀⠀|⠀⠀⠀⠀⠀⠀|
+⠀⠀⠀⠀⠀|⠀⠀|⠀⠀Bad⠀command⠀or⠀|⠀⠀|⠀⠀|/----|`---=⠀⠀⠀⠀|⠀⠀⠀⠀⠀⠀|
+⠀⠀⠀⠀⠀|⠀⠀|⠀⠀C:\>⠀_⠀|⠀⠀|⠀⠀|⠀⠀⠀,/|====⠀ooo⠀|⠀⠀⠀⠀⠀⠀;
+⠀⠀⠀⠀⠀|⠀⠀|⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀|⠀⠀|⠀⠀|⠀⠀//⠀|((((⠀[33]|⠀⠀⠀⠀,""
+⠀⠀⠀⠀⠀|⠀⠀`-----------------'⠀⠀|,""⠀.;'⠀|⠀|⠀((((⠀⠀⠀⠀⠀|⠀⠀,⠀""
+⠀⠀⠀⠀⠀+⠀-----------------------+⠀⠀;⠀;⠀⠀|⠀|⠀⠀⠀⠀⠀⠀⠀⠀⠀|,""
+⠀⠀⠀⠀⠀⠀⠀⠀/⠀_)______________(_⠀/⠀⠀//'⠀⠀⠀|⠀+---------+
+⠀⠀⠀___________________________⠀/⠀___⠀⠀`,
+⠀⠀/⠀oooooooooooooooo.o.oooo⠀/,⠀⠀⠀\,⠀""-----------
+⠀/⠀==⠀ooooooooooooooo⠀==.o.ooo⠀=⠀//⠀⠀⠀,`\--()B⠀⠀⠀⠀⠀,""
+/⠀_⠀==⠀__⠀==========⠀__⠀==⠀_ooo__ooo⠀=⠀_⠀/⠀'⠀⠀⠀/___________,""
+`-----------------------------'";
+
         public WindowsVista()
-            : base(ID, name: "Windows Vista", description: "Je Windows Vista omgeving op een tering slome VDI.")
+            : base(ID, name: "Windows Vista", description: DESCRIPTION)
         {
 
         }
@@ -40,6 +59,7 @@ namespace AmazingGame3.Persons.Instances
                     await console.WriteLineAsync("");
                     await console.WriteLineAsync("Je wacht tot Emile naar de WC gaat zodat je geen gedag hoeft te zeggen, en rent vervolgens naar beneden.".Pastel(GameEngine.COLOR_INTERMEDIATE_TEXT));
                     await console.WriteLineAsync("");
+                    StaterLobby.HasCompletedWork = true;
                     state.CurrentRoom = roomProvider.GetRoom(StaterLobby.ID);
                 })
                 .Build();

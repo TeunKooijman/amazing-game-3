@@ -50,7 +50,7 @@ namespace AmazingGame3.Persons.Instances
         public override DialogSegment GetDialog(GameState state, IRoomProvider roomProvider, IRemoteConsole console)
         {
             DialogBuilder builder = new DialogBuilder("Hallo! Wil jij een kaartje kopen?")
-                .AddResponse("Nee, ga weg.");
+                .AddResponse("Nee, ga weg.", "OMG rude.");
 
             if(state.Inventory.HasItem(GoudenMuntje.ID))
             {
@@ -80,7 +80,10 @@ namespace AmazingGame3.Persons.Instances
             }
             else
             {
-                builder.AddResponse("Nou, dat lijkt mij wel wat! Lekker klimmen en klauteren.", "Huh maar je hebt geen munt dom joch.");
+                builder.AddResponse("Nou, dat lijkt mij wel wat! Lekker klimmen en klauteren.", "Huh maar je hebt geen munt dom joch.", onChosenAsync: async state => 
+                {
+                    await console.WriteLineAsync("Shit joh, je hebt helemaal geen geld. Helaas groeien die pegels niet aan de boom. Je zal eerst werk moeten verzetten bij Stater!");
+                }); 
             }
 
             return builder.Build();

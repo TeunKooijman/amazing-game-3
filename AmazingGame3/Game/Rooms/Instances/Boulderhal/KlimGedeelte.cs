@@ -9,9 +9,17 @@ namespace AmazingGame3.Rooms.Instances.Boulderhal
         public static int ID = 4;
 
         public KlimGedeelte()
-            : base(ID, "KlimGedeelte")
+            : base(ID, "Klim Gedeelte")
         {
 
+        }
+
+        public override IPerson[] GetPersons(IPersonProvider provider)
+        {
+            return new IPerson[]
+            {
+                provider.GetPerson(KalendeMan.ID)
+            };
         }
 
         public override IRoom[] GetExits(IRoomProvider provider)
