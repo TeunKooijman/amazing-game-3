@@ -96,10 +96,11 @@ namespace AmazingGame3.Persons.Instances
                 return builder
                     .AddResponse("Nou, ik wou gewoon even gedag zeggen joh. Graag of niet he.", "Okee doei.", continuation => 
                     {
-                        continuation.AddResponse("Doei2.");
+                        continuation.AddResponse("Doei 2.");
                     })
                     .Build();
             }
+            else
             {
                 return builder
                     .AddResponse("Ik ben echt zo knettertje dom Tjeerd, ik ben alweer mijn pasje vergeten! Kan ik een dagpas krijgen?", "Ja whatever.", continuation =>
