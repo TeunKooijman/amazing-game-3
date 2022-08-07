@@ -27,6 +27,8 @@ namespace AmazingGame3.Rooms.Instances.Boulderhal
         {
             return @"
                 Eenmaal naar boven geklommen zie je een angstige Lœna vastgebonden liggen. Je doet een klein knikje haar kant op, roept ""ik ben hier"".
+                
+                Je pakt je mobiel uit je broekzakje en registreert je flash op toplogger.
             ";
         }
 
