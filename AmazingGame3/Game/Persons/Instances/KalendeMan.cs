@@ -58,7 +58,7 @@ namespace AmazingGame3.Persons.Instances
 
         public override DialogSegment GetDialog(GameState state, IRoomProvider roomProvider, IRemoteConsole console)
         {
-            DialogBuilder builder = new DialogBuilder("We leven in een simulatie, de wereld is niet echt! Alles wat we hier zien zijn slechts eentjes en nulletjes, gehost op een kubernetes cluster! Jij en ik hebben nooit bestaan, en zijn nooit geboren! Ons leven is een zieke grap van een prepuberale groep jongeren die dit universum hebben geschept voor hun eigen vermaak! Hun zieke geest heeft  ons realiteit gevormd en ..")
+            DialogBuilder builder = new DialogBuilder("We leven in een simulatie! De wereld is niet echt! Alles wat we hier zien zijn slechts eentjes en nulletjes, gehost op een kubernetes cluster! Jij en ik hebben nooit bestaan, en zijn nooit geboren! Ons leven is een zieke grap van een prepuberale groep jongeren die dit universum hebben geschept voor hun eigen vermaak! Hun zieke geest heeft onze realiteit gevormd en ..")
                 .AddResponse("Wow, OK, jij bent een wappie. Doei");
 
             return builder.Build();

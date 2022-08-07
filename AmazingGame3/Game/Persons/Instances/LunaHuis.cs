@@ -188,13 +188,13 @@ _____________________________________MMMM_________________________";
             return new DialogBuilder("Ohh Jasper wat ben je toch groot en sterk. Alleen jammer van je kleine piemel.")
                 .AddResponse("Dat klopt.", "Ik laat helemaal een slakkenspoor achter.", continuation =>
                 {
-                    continuation.AddResponse("Iel");
-                    continuation.AddResponse("Lekker");
+                    continuation.AddResponse("Iel", "Laten we gaan boulderen samen.", continuation => continuation.AddResponse("Is goed, ik heb de oefening hard nodig."));
+                    continuation.AddResponse("Lekker", "Laten we gaan boulderen samen.", continuation => continuation.AddResponse("Is goed, ik heb de oefening hard nodig."));
                 })
                 .AddResponse("Dat klopt zeker.", "Ik laat helemaal een slakkenspoor achter.", continuation =>
                 {
-                    continuation.AddResponse("Iel");
-                    continuation.AddResponse("Lekker");
+                    continuation.AddResponse("Iel", "Laten we gaan boulderen samen.", continuation => continuation.AddResponse("Is goed, ik heb de oefening hard nodig."));
+                    continuation.AddResponse("Lekker", "Laten we gaan boulderen samen.", continuation => continuation.AddResponse("Is goed, ik heb de oefening hard nodig."));
                 })
                 .Build();
         }

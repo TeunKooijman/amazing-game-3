@@ -16,7 +16,7 @@ namespace AmazingGame3.Items.Instances
 
         public string GetName()
         {
-            return "Stater Toeganspasje";
+            return "Stater Toegangspasje";
         }
 
         public string GetDescription()

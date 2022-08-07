@@ -83,26 +83,32 @@ namespace AmazingGame3.Persons.Instances
 
         public override DialogSegment GetDialog(GameState state, IRoomProvider roomProvider, IRemoteConsole console)
         {
-            DialogBuilder builder = new DialogBuilder("Hallo Jasper Maurice Van Noordenburg. Wat kan ik voor je doen?");
-
             if(HasBeenAtToeganspoortjes == false)
             {
-                return builder
+                return new DialogBuilder("Hallo Jasper Maurice Van Noordenburg. Wat kan ik voor je doen?")
                     .AddResponse("Ja ik weet eigenlijk ook niet zo goed waarom ik hier naartoe kwam. De ballen.", "De ballen 2.")
                     .Build();
             }
             else if(StaterLobby.HasCompletedWork)
             {
-                return builder
+                return new DialogBuilder("Hallo Jasper Maurice Van Noordenburg. Wat kan ik voor je doen?")
                     .AddResponse("Nou, ik wou gewoon even gedag zeggen joh. Graag of niet he.", "Okee doei.", continuation => 
                     {
                         continuation.AddResponse("Doei 2.");
+                        continuation.AddResponse("AmazingDoei3.");
                     })
+                    .Build();
+            }
+            else if(state.Inventory.HasItem(Toegangspasje.ID))
+            {
+                return new DialogBuilder("Nee, je krijgt niet nog een pasje, ga weg.")
+                    .AddResponse("OK sorry Tjeerdje.")
+                    .AddResponse("Wat zeggen jij?")
                     .Build();
             }
             else
             {
-                return builder
+                return new DialogBuilder("Hallo Jasper Maurice Van Noordenburg. Wat kan ik voor je doen?")
                     .AddResponse("Ik ben echt zo knettertje dom Tjeerd, ik ben alweer mijn pasje vergeten! Kan ik een dagpas krijgen?", "Ja whatever.", continuation =>
                     {
                         Func<GameState, Task> onChosenAsync = async (state) => 
@@ -110,7 +116,7 @@ namespace AmazingGame3.Persons.Instances
                             await state.Inventory.AddAsync(new Toegangspasje(), console);
                         };
                         continuation.AddResponse("Bedankt makker maat.", onChosenAsync);
-                        continuation.AddResponse("Bedankt lekkertje.", onChosenAsync);
+                        continuation.AddResponse("Bedankt weledelgeboren Tjeerdje.", onChosenAsync);
                     })
                     .Build();
             }

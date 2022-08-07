@@ -45,6 +45,11 @@ namespace AmazingGame3.Rooms.Instances.Stater
                 Tjeerdje.HasBeenAtToeganspoortjes = true;
                 return false;
             }
+            else if (exit is AchterHetToegangspoortje)
+            {
+                await console.WriteLineAsync("Als een glibberige aal wurm je je zo dat toegangspoortje door. Wat een mannetje.".Pastel(GameEngine.COLOR_INTERMEDIATE_TEXT));
+                return true;
+            }
 
             return true;
         }
