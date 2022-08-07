@@ -38,6 +38,7 @@ namespace AmazingGame3.Cli
         public Task WriteLineAsync(string line)
         {
             line = ColorParser.Parse(line, (line, match, text, color) => line.Replace(match, text.Pastel(color)));
+            line = line.Replace("⠀", " ");
             while(true)
             {
                 Match match = GameEngine.COLOR_REGEX.Match(line);
