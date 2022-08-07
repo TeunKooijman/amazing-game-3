@@ -29,7 +29,7 @@ namespace AmazingGame3.Rooms.Instances.Boulderhal
 
         public override string GetRoomDescription()
         {
-            return @"";
+            return @"Je pakt het crimpi vast met je duim en je pink. Werkt prima.";
         }
 
         public override async Task<bool> CanExitRoomToAsync(GameState state, IRoom exit, IRemoteConsole console)
